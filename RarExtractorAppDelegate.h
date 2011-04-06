@@ -7,11 +7,38 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "RAUPasswordWindow.h"
+#import "RAUTaskController.h"
 
-@interface RarExtractorAppDelegate : NSObject <NSApplicationDelegate> {
-    NSWindow *window;
+@class RAUMainWindow;
+
+@interface RarExtractorAppDelegate : NSObject <NSApplicationDelegate, NSWindowDelegate, RAUTaskControllerDelegate, RAUPasswordWindowDelegate> {
+    RAUMainWindow				*window;
+	NSView						*windowView;
+	BOOL						applicationDidFinishLaunching;
+	BOOL						terminateWhenDone;
+	BOOL						terminating;
+	NSMutableArray				*taskController;
+	RAUPasswordWindow			*passwordWindow;
+	BOOL						passwordWindowIsShowing;
+	RAUTaskController			*passwordWindowCurrentTask;
+	NSMutableArray				*passwordWindowWaitingTasks;
+
 }
 
-@property (assign) IBOutlet NSWindow *window;
+@property (readwrite, assign)	IBOutlet	RAUMainWindow		*window;
+@property (readwrite, assign)	IBOutlet	NSView				*windowView;
+@property (readwrite, assign)						BOOL				applicationDidFinishLaunching;
+@property (readwrite, assign)						BOOL				terminateWhenDone;
+@property (readwrite, assign)						BOOL				terminating;
+@property (readwrite, retain)				NSMutableArray		*taskController;
+@property (readwrite, assign)	IBOutlet	RAUPasswordWindow	*passwordWindow;
+@property (readwrite, assign)						BOOL				passwordWindowIsShowing;
+@property (readwrite, retain)				RAUTaskController	*passwordWindowCurrentTask;
+@property (readwrite, retain)				NSMutableArray		*passwordWindowWaitingTasks;
+
+-(void)addTaskController:(RAUTaskController *)newController;
+-(void)showPasswordWindowForTaskController:(RAUTaskController *)needyController;
+-(void)dismissPasswordWindow;
 
 @end
