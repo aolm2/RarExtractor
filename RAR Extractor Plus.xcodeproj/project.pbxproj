@@ -1,0 +1,445 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
+		256AC3DA0F4B6AC300CF3369 /* RarExtractorAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 256AC3D90F4B6AC300CF3369 /* RarExtractorAppDelegate.m */; };
+		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
+		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
+		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		F3034B7013335EB20037102D /* RAUPasswordWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = F3034B6F13335EB20037102D /* RAUPasswordWindow.m */; };
+		F30986F11334541E0080708A /* RAURarfile.m in Sources */ = {isa = PBXBuildFile; fileRef = F30986F01334541E0080708A /* RAURarfile.m */; };
+		F30986FD13348A8F0080708A /* RAUAuxiliary.m in Sources */ = {isa = PBXBuildFile; fileRef = F30986FC13348A8F0080708A /* RAUAuxiliary.m */; };
+		F3098700133491B50080708A /* RAUTask.m in Sources */ = {isa = PBXBuildFile; fileRef = F30986FF133491B50080708A /* RAUTask.m */; };
+		F309870713349A370080708A /* RAUCheckTask.m in Sources */ = {isa = PBXBuildFile; fileRef = F309870613349A370080708A /* RAUCheckTask.m */; };
+		F309870A13349BE10080708A /* RAUExtractTask.m in Sources */ = {isa = PBXBuildFile; fileRef = F309870913349BE10080708A /* RAUExtractTask.m */; };
+		F309870D13349DDC0080708A /* RAUTaskController.m in Sources */ = {isa = PBXBuildFile; fileRef = F309870C13349DDC0080708A /* RAUTaskController.m */; };
+		F30987111334AAE00080708A /* RAUExtractTaskController.m in Sources */ = {isa = PBXBuildFile; fileRef = F30987101334AAE00080708A /* RAUExtractTaskController.m */; };
+		F30987151334AF970080708A /* RAUTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F30987141334AF970080708A /* RAUTaskViewController.m */; };
+		F309871C1334B5BC0080708A /* RAUStopButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F309871B1334B5BC0080708A /* RAUStopButton.m */; };
+		F309871E1334B6EF0080708A /* RarProgress.xib in Resources */ = {isa = PBXBuildFile; fileRef = F309871D1334B6EF0080708A /* RarProgress.xib */; };
+		F30987521334BB2E0080708A /* caution.png in Resources */ = {isa = PBXBuildFile; fileRef = F309874C1334BB2E0080708A /* caution.png */; };
+		F30987531334BB2E0080708A /* in.png in Resources */ = {isa = PBXBuildFile; fileRef = F309874D1334BB2E0080708A /* in.png */; };
+		F30987541334BB2E0080708A /* stop.png in Resources */ = {isa = PBXBuildFile; fileRef = F309874E1334BB2E0080708A /* stop.png */; };
+		F30987551334BB2E0080708A /* stopHovered.png in Resources */ = {isa = PBXBuildFile; fileRef = F309874F1334BB2E0080708A /* stopHovered.png */; };
+		F30987561334BB2E0080708A /* stopPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = F30987501334BB2E0080708A /* stopPressed.png */; };
+		F30987571334BB2E0080708A /* warning.png in Resources */ = {isa = PBXBuildFile; fileRef = F30987511334BB2E0080708A /* warning.png */; };
+		F30987591334BB530080708A /* unrar in Resources */ = {isa = PBXBuildFile; fileRef = F30987581334BB530080708A /* unrar */; };
+		F317B8521333AF1800B742EF /* RAUPath.m in Sources */ = {isa = PBXBuildFile; fileRef = F317B8511333AF1800B742EF /* RAUPath.m */; };
+		F3230D8D1362F7EA00DB24EB /* ClickableText.m in Sources */ = {isa = PBXBuildFile; fileRef = F3230D8C1362F7EA00DB24EB /* ClickableText.m */; };
+		F3D00FA11365149500239377 /* rarlogo.icns in Resources */ = {isa = PBXBuildFile; fileRef = F3D00FA01365149500239377 /* rarlogo.icns */; };
+		F3D00FAF1365176600239377 /* droprar.png in Resources */ = {isa = PBXBuildFile; fileRef = F3D00FAE1365176600239377 /* droprar.png */; };
+		F3D00FF41365328700239377 /* rarfile.icns in Resources */ = {isa = PBXBuildFile; fileRef = F3D00FF31365328700239377 /* rarfile.icns */; };
+		F3ED900413323FFF005F044E /* RAUMainWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = F3ED900313323FFF005F044E /* RAUMainWindow.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+		1DDD58150DA1D0A300B32029 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		256AC3D80F4B6AC300CF3369 /* RarExtractorAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RarExtractorAppDelegate.h; sourceTree = "<group>"; };
+		256AC3D90F4B6AC300CF3369 /* RarExtractorAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RarExtractorAppDelegate.m; sourceTree = "<group>"; };
+		256AC3F00F4B6AF500CF3369 /* RAR Extractor Plus_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RAR Extractor Plus_Prefix.pch"; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		8D1107310486CEB800E47090 /* RAR Extractor Plus-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "RAR Extractor Plus-Info.plist"; sourceTree = "<group>"; };
+		F3034B6E13335EB20037102D /* RAUPasswordWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAUPasswordWindow.h; sourceTree = "<group>"; };
+		F3034B6F13335EB20037102D /* RAUPasswordWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAUPasswordWindow.m; sourceTree = "<group>"; };
+		F30986EF1334541E0080708A /* RAURarfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAURarfile.h; sourceTree = "<group>"; };
+		F30986F01334541E0080708A /* RAURarfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAURarfile.m; sourceTree = "<group>"; };
+		F30986FB13348A8F0080708A /* RAUAuxiliary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAUAuxiliary.h; sourceTree = "<group>"; };
+		F30986FC13348A8F0080708A /* RAUAuxiliary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAUAuxiliary.m; sourceTree = "<group>"; };
+		F30986FE133491B50080708A /* RAUTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAUTask.h; sourceTree = "<group>"; };
+		F30986FF133491B50080708A /* RAUTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAUTask.m; sourceTree = "<group>"; };
+		F3098704133499820080708A /* RAUTaskPrivates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAUTaskPrivates.h; sourceTree = "<group>"; };
+		F309870513349A370080708A /* RAUCheckTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAUCheckTask.h; sourceTree = "<group>"; };
+		F309870613349A370080708A /* RAUCheckTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAUCheckTask.m; sourceTree = "<group>"; };
+		F309870813349BE10080708A /* RAUExtractTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAUExtractTask.h; sourceTree = "<group>"; };
+		F309870913349BE10080708A /* RAUExtractTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAUExtractTask.m; sourceTree = "<group>"; };
+		F309870B13349DDC0080708A /* RAUTaskController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAUTaskController.h; sourceTree = "<group>"; };
+		F309870C13349DDC0080708A /* RAUTaskController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAUTaskController.m; sourceTree = "<group>"; };
+		F309870E1334A9B20080708A /* RAUTaskControllerPrivates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAUTaskControllerPrivates.h; sourceTree = "<group>"; };
+		F309870F1334AAE00080708A /* RAUExtractTaskController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAUExtractTaskController.h; sourceTree = "<group>"; };
+		F30987101334AAE00080708A /* RAUExtractTaskController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAUExtractTaskController.m; sourceTree = "<group>"; };
+		F30987131334AF970080708A /* RAUTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAUTaskViewController.h; sourceTree = "<group>"; };
+		F30987141334AF970080708A /* RAUTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAUTaskViewController.m; sourceTree = "<group>"; };
+		F309871A1334B5BC0080708A /* RAUStopButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAUStopButton.h; sourceTree = "<group>"; };
+		F309871B1334B5BC0080708A /* RAUStopButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAUStopButton.m; sourceTree = "<group>"; };
+		F309871D1334B6EF0080708A /* RarProgress.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RarProgress.xib; sourceTree = "<group>"; };
+		F309874C1334BB2E0080708A /* caution.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = caution.png; sourceTree = "<group>"; };
+		F309874D1334BB2E0080708A /* in.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = in.png; sourceTree = "<group>"; };
+		F309874E1334BB2E0080708A /* stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stop.png; sourceTree = "<group>"; };
+		F309874F1334BB2E0080708A /* stopHovered.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stopHovered.png; sourceTree = "<group>"; };
+		F30987501334BB2E0080708A /* stopPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stopPressed.png; sourceTree = "<group>"; };
+		F30987511334BB2E0080708A /* warning.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = warning.png; sourceTree = "<group>"; };
+		F30987581334BB530080708A /* unrar */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = unrar; sourceTree = "<group>"; };
+		F317B8501333AF1800B742EF /* RAUPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAUPath.h; sourceTree = "<group>"; };
+		F317B8511333AF1800B742EF /* RAUPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAUPath.m; sourceTree = "<group>"; };
+		F3230D8B1362F7EA00DB24EB /* ClickableText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClickableText.h; sourceTree = "<group>"; };
+		F3230D8C1362F7EA00DB24EB /* ClickableText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClickableText.m; sourceTree = "<group>"; };
+		F331B2501365566900158E9D /* RAR Extractor Plus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RAR Extractor Plus.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3D00FA01365149500239377 /* rarlogo.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = rarlogo.icns; sourceTree = "<group>"; };
+		F3D00FAE1365176600239377 /* droprar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = droprar.png; sourceTree = "<group>"; };
+		F3D00FF31365328700239377 /* rarfile.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = rarfile.icns; sourceTree = "<group>"; };
+		F3ED900213323FFF005F044E /* RAUMainWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAUMainWindow.h; sourceTree = "<group>"; };
+		F3ED900313323FFF005F044E /* RAUMainWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAUMainWindow.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D11072E0486CEB800E47090 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				F30986FB13348A8F0080708A /* RAUAuxiliary.h */,
+				F30986FC13348A8F0080708A /* RAUAuxiliary.m */,
+				256AC3D80F4B6AC300CF3369 /* RarExtractorAppDelegate.h */,
+				256AC3D90F4B6AC300CF3369 /* RarExtractorAppDelegate.m */,
+				F317B8501333AF1800B742EF /* RAUPath.h */,
+				F317B8511333AF1800B742EF /* RAUPath.m */,
+				F30986EF1334541E0080708A /* RAURarfile.h */,
+				F30986F01334541E0080708A /* RAURarfile.m */,
+				F317B84C1333AC7E00B742EF /* Task Controller */,
+				F317B84B1333A61E00B742EF /* Task */,
+				F317B84D1333AC8B00B742EF /* UI */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
+				13E42FB307B3F0F600E4EEF1 /* CoreData.framework */,
+				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F331B2501365566900158E9D /* RAR Extractor Plus.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* RarExtractor */ = {
+			isa = PBXGroup;
+			children = (
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = RarExtractor;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				256AC3F00F4B6AF500CF3369 /* RAR Extractor Plus_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F3D00FF31365328700239377 /* rarfile.icns */,
+				F3D00FAE1365176600239377 /* droprar.png */,
+				F3D00FA01365149500239377 /* rarlogo.icns */,
+				F30987581334BB530080708A /* unrar */,
+				F309874C1334BB2E0080708A /* caution.png */,
+				F309874D1334BB2E0080708A /* in.png */,
+				F309874E1334BB2E0080708A /* stop.png */,
+				F309874F1334BB2E0080708A /* stopHovered.png */,
+				F30987501334BB2E0080708A /* stopPressed.png */,
+				F30987511334BB2E0080708A /* warning.png */,
+				F309871D1334B6EF0080708A /* RarProgress.xib */,
+				8D1107310486CEB800E47090 /* RAR Extractor Plus-Info.plist */,
+				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
+				1DDD58140DA1D0A300B32029 /* MainMenu.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
+				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F317B84B1333A61E00B742EF /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				F309870513349A370080708A /* RAUCheckTask.h */,
+				F309870613349A370080708A /* RAUCheckTask.m */,
+				F3098704133499820080708A /* RAUTaskPrivates.h */,
+				F30986FE133491B50080708A /* RAUTask.h */,
+				F30986FF133491B50080708A /* RAUTask.m */,
+				F309870813349BE10080708A /* RAUExtractTask.h */,
+				F309870913349BE10080708A /* RAUExtractTask.m */,
+			);
+			name = Task;
+			sourceTree = "<group>";
+		};
+		F317B84C1333AC7E00B742EF /* Task Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F309870F1334AAE00080708A /* RAUExtractTaskController.h */,
+				F30987101334AAE00080708A /* RAUExtractTaskController.m */,
+				F309870E1334A9B20080708A /* RAUTaskControllerPrivates.h */,
+				F309870B13349DDC0080708A /* RAUTaskController.h */,
+				F309870C13349DDC0080708A /* RAUTaskController.m */,
+			);
+			name = "Task Controller";
+			sourceTree = "<group>";
+		};
+		F317B84D1333AC8B00B742EF /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				F3230D8B1362F7EA00DB24EB /* ClickableText.h */,
+				F3230D8C1362F7EA00DB24EB /* ClickableText.m */,
+				F30987131334AF970080708A /* RAUTaskViewController.h */,
+				F30987141334AF970080708A /* RAUTaskViewController.m */,
+				F3034B6E13335EB20037102D /* RAUPasswordWindow.h */,
+				F3034B6F13335EB20037102D /* RAUPasswordWindow.m */,
+				F3ED900213323FFF005F044E /* RAUMainWindow.h */,
+				F3ED900313323FFF005F044E /* RAUMainWindow.m */,
+				F309871A1334B5BC0080708A /* RAUStopButton.h */,
+				F309871B1334B5BC0080708A /* RAUStopButton.m */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8D1107260486CEB800E47090 /* RAR Extractor Plus */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "RAR Extractor Plus" */;
+			buildPhases = (
+				8D1107290486CEB800E47090 /* Resources */,
+				8D11072C0486CEB800E47090 /* Sources */,
+				8D11072E0486CEB800E47090 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "RAR Extractor Plus";
+			productInstallPath = "$(HOME)/Applications";
+			productName = RarExtractor;
+			productReference = F331B2501365566900158E9D /* RAR Extractor Plus.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "RAR Extractor Plus" */;
+			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* RarExtractor */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D1107260486CEB800E47090 /* RAR Extractor Plus */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D1107290486CEB800E47090 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
+				1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */,
+				F309871E1334B6EF0080708A /* RarProgress.xib in Resources */,
+				F30987521334BB2E0080708A /* caution.png in Resources */,
+				F30987531334BB2E0080708A /* in.png in Resources */,
+				F30987541334BB2E0080708A /* stop.png in Resources */,
+				F30987551334BB2E0080708A /* stopHovered.png in Resources */,
+				F30987561334BB2E0080708A /* stopPressed.png in Resources */,
+				F30987571334BB2E0080708A /* warning.png in Resources */,
+				F30987591334BB530080708A /* unrar in Resources */,
+				F3D00FA11365149500239377 /* rarlogo.icns in Resources */,
+				F3D00FAF1365176600239377 /* droprar.png in Resources */,
+				F3D00FF41365328700239377 /* rarfile.icns in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D11072C0486CEB800E47090 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072D0486CEB800E47090 /* main.m in Sources */,
+				256AC3DA0F4B6AC300CF3369 /* RarExtractorAppDelegate.m in Sources */,
+				F3ED900413323FFF005F044E /* RAUMainWindow.m in Sources */,
+				F3034B7013335EB20037102D /* RAUPasswordWindow.m in Sources */,
+				F317B8521333AF1800B742EF /* RAUPath.m in Sources */,
+				F30986F11334541E0080708A /* RAURarfile.m in Sources */,
+				F30986FD13348A8F0080708A /* RAUAuxiliary.m in Sources */,
+				F3098700133491B50080708A /* RAUTask.m in Sources */,
+				F309870713349A370080708A /* RAUCheckTask.m in Sources */,
+				F309870A13349BE10080708A /* RAUExtractTask.m in Sources */,
+				F309870D13349DDC0080708A /* RAUTaskController.m in Sources */,
+				F30987111334AAE00080708A /* RAUExtractTaskController.m in Sources */,
+				F30987151334AF970080708A /* RAUTaskViewController.m in Sources */,
+				F309871C1334B5BC0080708A /* RAUStopButton.m in Sources */,
+				F3230D8D1362F7EA00DB24EB /* ClickableText.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		089C165CFE840E0CC02AAC07 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089C165DFE840E0CC02AAC07 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		1DDD58140DA1D0A300B32029 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1DDD58150DA1D0A300B32029 /* English */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C01FCF4B08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RAR Extractor Plus_Prefix.pch";
+				INFOPLIST_FILE = "RAR Extractor Plus-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_NAME = "RAR Extractor Plus";
+			};
+			name = Debug;
+		};
+		C01FCF4C08A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RAR Extractor Plus_Prefix.pch";
+				INFOPLIST_FILE = "RAR Extractor Plus-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_NAME = "RAR Extractor Plus";
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Jun Yan";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.6;
+				VALID_ARCHS = "i386 ppc64 ppc7400 ppc970 x86_64";
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Jun Yan";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.6;
+				VALID_ARCHS = "i386 ppc64 ppc7400 ppc970 x86_64";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "RAR Extractor Plus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4B08A954540054247B /* Debug */,
+				C01FCF4C08A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "RAR Extractor Plus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
