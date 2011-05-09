@@ -33,6 +33,7 @@
 		self.numberOfParts		= self.rarfile.numberOfParts;
 		self.passwordArgument	= nil;
 	}
+	
 	return self;
 }
 
@@ -61,10 +62,11 @@
 	
 	self.tmpPath = [RAUAuxiliary uniqueTemporaryPath];
 	[fileManager createDirectoryAtPath:self.tmpPath.completePath withIntermediateDirectories:NO attributes:nil error:nil];
-	[self.task setCurrentDirectoryPath:self.tmpPath.completePath]; 
+	[self.task setCurrentDirectoryPath:self.tmpPath.completePath];
 	
 	[self.task setLaunchPath:[[NSBundle mainBundle] pathForResource:@"unrar" ofType:@""]]; //Path to unrar executable
-	[self.task setArguments:arguments]; 
+	[self.task setArguments:arguments];
+
 }
 
 #pragma mark -

@@ -14,9 +14,7 @@
 #import "RAUAuxiliary.h"
 #import "RAUTaskViewController.h"
 
-
 @implementation RAUTaskController
-
 
 #pragma mark -
 @synthesize delegate;
@@ -45,7 +43,8 @@
 													 name:TaskViewStopButtonPressedNotification
 												   object:self.viewController];
 	}
-	return self;
+	
+	return self; 
 }
 
 -(void)initView {
@@ -110,7 +109,7 @@
 		[self.delegate taskControllerRarfileInvalid:self];
 	} else {
 		if (self.rarfile.isPasswordProtected == YES) { 
-			[self.delegate taskControllerNeedsPassword:self];
+			[self.delegate taskControllerNeedsPassword:self isWrong:NO];
 		} else { //Normal rarfile
 			[self.delegate taskControllerIsReady:self];
 		}
@@ -131,7 +130,7 @@
 		self.passwordArgument = self.rarfile.correctPassword;
 		[self.delegate taskControllerIsReady:self];
 	} else {
-		[self.delegate taskControllerNeedsPassword:self];
+		[self.delegate taskControllerNeedsPassword:self isWrong:YES];
 	}
 }
 

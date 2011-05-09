@@ -11,7 +11,7 @@
 
 @class RAUTaskController;
 @protocol RAUTaskControllerDelegate
--(void)taskControllerNeedsPassword:(RAUTaskController *)needyController;
+-(void)taskControllerNeedsPassword:(RAUTaskController *)needyController isWrong:(BOOL)bWrongPassword;
 -(void)taskControllerRarfileInvalid:(RAUTaskController *)invalidController;
 -(void)taskControllerIsReady:(RAUTaskController *)readyController;
 -(void)taskControllerDidFinish:(RAUTaskController *)finishedController;

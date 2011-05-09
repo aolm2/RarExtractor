@@ -80,6 +80,35 @@
 
 }
 
+-(IBAction) chooseAFile:(id)sender {
+	[[NSOpenPanel openPanel] beginSheetForDirectory:nil
+											   file:nil
+											  types:[NSArray arrayWithObjects:@"rar",nil]
+									 modalForWindow:[self window]
+									  modalDelegate:self
+									 didEndSelector:@selector(openPanelDidEnd:returnCode:contextInfo:)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+										contextInfo:nil];
+}
+
+- (void)openPanelDidEnd:(NSOpenPanel *)sheet returnCode:(int)returnCode
+            contextInfo:(void *)contextInfo {
+	if(returnCode == NSOKButton) {
+		NSString *archiveFile = [[[sheet filenames] objectAtIndex:0] copy];
+		[sheet close];
+		
+		self.terminateWhenDone = NO;
+		RAUPath *archiveFilePath = [RAUPath pathWithFile:archiveFile];
+		RAUExtractTaskController *newController = [[RAUExtractTaskController alloc] initWithFilePath:archiveFilePath];
+		[self addTaskController:newController];
+		[newController release];
+		
+		[archiveFile release];
+		
+
+	}
+}
+
+
 
 /* Automatically called when the application gets the terminate signal by terminate: or the user pressing CMD+Q (NSApplicationDelegate) */
 -(NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender {
@@ -102,7 +131,7 @@
 	[passwordWindow	release];
 	
 	self.taskController				= nil;
-	self.passwordWindowCurrentTask	= nil; 
+	self.passwordWindowCurrentTask	= nil;
 	self.passwordWindowWaitingTasks	= nil;
 	
 	[super dealloc];
@@ -133,7 +162,7 @@
 -(BOOL)windowShouldClose:(id)sender {
 	if (sender == self.window) {
 		[NSApp terminate:nil];
-	} 
+	}
 	return YES;
 }
 
@@ -155,7 +184,8 @@
 	[newView				setFrameOrigin:NSMakePoint(0,-1)]; //A cosmetic thing to hide the black line on the bottom of the last view
 	[self.windowView		addSubview:newView];
 	[self.window.introLabel	setHidden:YES];
-	
+	[self.window.chooseAFile	setHidden:YES];
+	[self.window.imageView	setHidden:YES];
 	[self.taskController addObject:newController];
 
 }
@@ -165,7 +195,7 @@
 	NSString *filenameToDisplay = [NSString stringWithFormat:@"%@.%@", invalidController.rarfile.path.filename, invalidController.rarfile.path.extension];
 	NSString *errorMessage = nil;
 	if ([invalidController isKindOfClass:[RAUExtractTaskController class]]) {
-		errorMessage = [NSString stringWithFormat:NSLocalizedString(@"\"%@\" can't be extracted because it seems to be no RAR file.", nil), filenameToDisplay];
+		errorMessage = [NSString stringWithFormat:NSLocalizedString(@"\"%@\" can't be extracted. It may be not a RAR file, or it is damaged.", nil), filenameToDisplay];
 	}
 
 	[invalidController showErrorAndFinish:errorMessage];
@@ -214,14 +244,15 @@
 			//If there are no controllers left and we didn't terminate: Show the intro label
 		} else if ([self.taskController count] == 0) {
 			[self.window.introLabel setHidden:NO];
+			[self.window.chooseAFile	setHidden:NO];
+			[self.window.imageView	setHidden:NO];
 		}
 	}
 }
 
-
 /* Automatically called when a task controller detected its rarfile is protected and asks for a password (RAUTaskControlerDelegate) */
--(void)taskControllerNeedsPassword:(RAUTaskController *)needyController {	
-	[self showPasswordWindowForTaskController:needyController];
+-(void)taskControllerNeedsPassword:(RAUTaskController *)needyController isWrong:(BOOL)bWrongPassword {	
+	[self showPasswordWindowForTaskController:needyController isWrongPassword:bWrongPassword];
 }
 
 #pragma mark -
@@ -229,20 +260,25 @@
 @synthesize passwordWindow;
 @synthesize passwordWindowIsShowing, passwordWindowCurrentTask, passwordWindowWaitingTasks;
 
--(void)showPasswordWindowForTaskController:(RAUTaskController *)needyController {
+-(void)showPasswordWindowForTaskController:(RAUTaskController *)needyController isWrongPassword:(BOOL)bWrongPassword {
 	if (self.passwordWindowIsShowing == NO || needyController == self.passwordWindowCurrentTask) {
 		/* If the password window was not shown yet, prepare the UI and show it. If it was but needyController is the same controller as
 		 the one the window was shown for, simply reset the UI (enable all UI elements, clear the textfield etc.) */
-		NSString *title = [NSString stringWithFormat:NSLocalizedString(@"\"%@.%@\" needs a password", nil), 
-						   needyController.rarfile.path.filename, needyController.rarfile.path.extension];
+		NSString *title;
+		if (bWrongPassword) {
+			title = @"Incorrect password. Please enter again:";
+		} else {
+			title = @"Please enter password:";
+		}
 		
+		/*
 		NSFont *titleFontFitting = [RAUAuxiliary fontFittingToSize:passwordWindow.titleLabel.frame.size
 														  withText:title 
 														  fontName:[[NSFont boldSystemFontOfSize:0] fontName]
 														 minPtSize:10.0
-														 maxPtSize:13.5];
+														 maxPtSize:13.5];*/
 		
-		[self.passwordWindow.titleLabel			setFont:titleFontFitting];
+		//[self.passwordWindow.titleLabel			setFont:titleFontFitting];
 		[self.passwordWindow.titleLabel			setStringValue:title];
 		[self.passwordWindow.passwordTextField	setStringValue:@""];
 		[self.passwordWindow.passwordTextField	setEnabled:YES];
@@ -297,7 +333,7 @@
 	//If there are TaskControllers in queue for the password sheet, pick the next one and show the password sheet for it
 	if ([self.passwordWindowWaitingTasks count] > 0) {
 		RAUTaskController *needyController = (RAUTaskController *)[self.passwordWindowWaitingTasks objectAtIndex:0];
-		[self taskControllerNeedsPassword:needyController];
+		[self taskControllerNeedsPassword:needyController isWrong:NO];
 		[self.passwordWindowWaitingTasks removeObject:needyController];
 	}
 }

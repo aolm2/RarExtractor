@@ -87,8 +87,8 @@
 /* Uses an applescript to reveal path in finder */
 +(void)revealInFinder:(RAUPath *)path {
 	//Tell finder to select path (via AppleScript). Don't select if path is the desktop or on the desktop
-	NSString *pathToDesktop = [NSHomeDirectory() stringByAppendingPathComponent:@"Desktop"];
-	if ([path.withoutFilename isEqualToString:pathToDesktop] == NO && [[path.withoutFilename stringByDeletingLastPathComponent] isEqualToString:pathToDesktop] == NO) {
+	//NSString *pathToDesktop = [NSHomeDirectory() stringByAppendingPathComponent:@"Desktop"];
+	//if ([path.withoutFilename isEqualToString:pathToDesktop] == NO && [[path.withoutFilename stringByDeletingLastPathComponent] isEqualToString:pathToDesktop] == NO) {
 		//This C-Script converts from normal paths to HFS-Paths ("HD:Users:Me:Something") (found via google)
 		CFURLRef url = CFURLCreateWithFileSystemPath(kCFAllocatorDefault, (CFStringRef)path.completePath, kCFURLPOSIXPathStyle, YES);
 		CFStringRef hfsPath = CFURLCopyFileSystemPath(url, kCFURLHFSPathStyle);
@@ -100,7 +100,7 @@
 		NSAppleScript *appleScript = [[NSAppleScript alloc] initWithSource:scriptSourceCode];
 		[appleScript executeAndReturnError:nil];
 		[appleScript release];
-	}	
+	//}	
 }
 
 /* This creates a string with text and the font fontName and decreases its size until it fits in targetSize or reaches minSize.

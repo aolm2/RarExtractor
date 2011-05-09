@@ -8,12 +8,17 @@
 
 #import <Cocoa/Cocoa.h>
 
+@class ClickableText;
 
 @interface RAUMainWindow : NSWindow {
 	NSTextField	*introLabel;
+	ClickableText *chooseAFile;
+	NSImageView *imageView;
 }
 
 @property (readwrite, assign)	IBOutlet	NSTextField	*introLabel;
+@property (readwrite, assign)	IBOutlet	ClickableText *chooseAFile;
+@property (readwrite, assign)	IBOutlet	NSImageView *imageView;
 
 -(void)expandBy:(int)expandBy animate:(BOOL)animate;
 -(void)expandBy:(int)expandBy;

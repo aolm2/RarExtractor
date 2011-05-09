@@ -46,15 +46,15 @@
 		
 		NSFileManager *fileManager = [NSFileManager defaultManager];
 		
-		if (self.extractTask.result == TaskResultOK) { 
+		if (self.extractTask.result == TaskResultOK) {
 			NSArray *extractedFiles = [fileManager contentsOfDirectoryAtPath:self.extractTask.tmpPath.completePath error:nil];
 			RAUPath *targetPath;
 			
 			//If we extracted multiple files, we copy all the files in a new directory
-			if ([extractedFiles count] > 1) { 
+			if ([extractedFiles count] > 1) {
 				//Determine the target directory
-				targetPath = [RAUAuxiliary uniquePathForStringFilename:self.rarfile.path.filename 
-														  inStringPath:self.rarfile.path.withoutFilename 
+				targetPath = [RAUAuxiliary uniquePathForStringFilename:self.rarfile.path.filename
+														  inStringPath:self.rarfile.path.withoutFilename
 														   isDirectory:YES];
 				
 				[fileManager createDirectoryAtPath:targetPath.completePath withIntermediateDirectories:YES attributes:nil error:nil];

@@ -43,8 +43,10 @@
 		[checkTask setDelegate:self];
 		[checkTask launchTask];
 	}
+	
 	return self;
 }
+
 
 /* Automatically called when the initial check of the rarfile is done */
 -(void)rarfileWasChecked:(RAUCheckTask *)checkTask {

@@ -1,7 +1,0 @@
-//
-// Prefix header for all source files of the 'RarExtractor' target in the 'RarExtractor' project
-//
-
-#ifdef __OBJC__
-    #import <Cocoa/Cocoa.h>
-#endif

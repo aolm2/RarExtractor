@@ -7,10 +7,10 @@
 //
 
 #import "RAUMainWindow.h"
-
+#import "ClickableText.h"
 
 @implementation RAUMainWindow
-@synthesize introLabel;
+@synthesize introLabel,chooseAFile,imageView;
 #pragma mark -
 #pragma mark Dragging
 

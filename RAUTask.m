@@ -111,6 +111,7 @@
 -(void)parseNewOutput:(NSString *)output {
 	/* First we need to remove all "Calculating control sums"-Blocks. They contain progress of calculating some control sum, which would
 	 be mistakenly taken for the overall progress. Everything between "Calculating control sum" and the next "Creating archive" must go */
+	//NSLog(@"Output: %@",output);
 	
 	static BOOL lastFinishedInControlBlock = NO; //Takes care if output finishes INSIDE a control block
 	if (lastFinishedInControlBlock == YES || [output rangeOfString:@"Calculating the control sum "].location != NSNotFound) {

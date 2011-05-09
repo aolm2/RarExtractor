@@ -46,7 +46,6 @@
 	[super taskWillLaunch];
 	
 	NSArray *arguments;
-	
 	NSString *passwordArgumentString = @"-p-"; //"-p-" means: no password
 	if (self.passwordArgument != nil) passwordArgumentString = [NSString stringWithFormat:@"-p%@", self.passwordArgument];
 	
@@ -58,6 +57,7 @@
 	//We have all the info we can gather after a second - terminate to save time. 
 	//If the infos are gathered earlier, the task terminates by itself
 	[self performSelector:@selector(terminateTask) withObject:nil afterDelay:0.75];
+
 }
 
 #pragma mark -
